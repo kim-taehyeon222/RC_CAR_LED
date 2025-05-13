@@ -9,9 +9,9 @@
 #define CH5 A2  // on/off
 
 // LED 핀
-const int LED_R = 9;
-const int LED_G = 10;
-const int LED_B = 11;
+const int redPin = 9;
+const int yellowPin = 10;
+const int greenPin = 11;
 
 // PWM 저장
 volatile unsigned long startCH1, startCH2, startCH5;
@@ -33,9 +33,9 @@ void setup() {
   attachPCINT(digitalPinToPCINT(CH2), changeColor, CHANGE);
   attachPCINT(digitalPinToPCINT(CH5), onOff, CHANGE);
 
-  pinMode(LED_R, OUTPUT);
-  pinMode(LED_G, OUTPUT);
-  pinMode(LED_B, OUTPUT);
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
 }
 
 // CH1 Interrupt: Brightness
@@ -69,22 +69,22 @@ void onOff() {
 void turnOnLed(int pwm, int bright) {
   if (ledOn) {
     if (pwm < 1300) {
-      analogWrite(LED_R, bright);
-      analogWrite(LED_G, 0);
-      analogWrite(LED_B, 0);
+      analogWrite(redPin, bright);
+      analogWrite(yellowPin, 0);
+      analogWrite(greenPin, 0);
     } else if (pwm < 1700) {
-      analogWrite(LED_R, 0);
-      analogWrite(LED_G, bright);
-      analogWrite(LED_B, 0);
+      analogWrite(redPin, 0);
+      analogWrite(yellowPin, bright);
+      analogWrite(greenPin, 0);
     } else {
-      analogWrite(LED_R, 0);
-      analogWrite(LED_G, 0);
-      analogWrite(LED_B, bright);
+      analogWrite(redPin, 0);
+      analogWrite(yellowPin, 0);
+      analogWrite(greenPin, bright);
     }
   } else {
-    analogWrite(LED_R, 0);
-    analogWrite(LED_G, 0);
-    analogWrite(LED_B, 0);
+    analogWrite(redPin, 0);
+    analogWrite(yellowPin, 0);
+    analogWrite(greenPin, 0);
   }
 }
 
