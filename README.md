@@ -4,7 +4,7 @@
 
 CH1 : LED의 밝기를 조절
 CH2 : pulse에 따라 red, yellow, green led 색상 변경
-CH5 : on/off 버튼튼
+CH5 : on/off 버튼
 
 ## 영상링크
 
