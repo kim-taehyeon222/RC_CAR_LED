@@ -2,8 +2,10 @@
 
 3색 led가 없어서 red, yellow, green led 3개를 이용하여 구성했습니다.
 
-CH1 : LED의 밝기를 조절\n
-CH2 : pulse에 따라 red, yellow, green led 색상 변경\n
+CH1 : LED의 밝기를 조절
+
+CH2 : pulse에 따라 red, yellow, green led 색상 변경
+
 CH5 : on/off 버튼
 
 ## 동작영상
